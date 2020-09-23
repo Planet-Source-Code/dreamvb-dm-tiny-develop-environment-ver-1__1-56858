@@ -1,0 +1,5 @@
+var result = MessageBox('Messages goes here',4 | 64,'Message Box');
+  if(result==6)
+        MessageBox('You clicked Yes');
+  else
+        MessageBox('You clicked No');

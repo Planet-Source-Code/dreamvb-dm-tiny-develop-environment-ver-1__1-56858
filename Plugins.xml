@@ -1,0 +1,14 @@
+// Place all your plug-in information in this file:
+
+// Count value=Number of plug-ins in this file
+// Plugin1 number of the current plugin
+// Info=Name of plugin, Class server name,Plugins path
+
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<Count value="1"/>
+	
+	<Plugins>
+		<Plugin1 info="Test Plug,devTest.main,{PLUG_PATH}\devTest.dll"/>
+	</Plugins>
+</config>

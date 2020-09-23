@@ -1,0 +1,6 @@
+<Project>
+	<Title>CDRom</Title>
+	<Language>VBScript</Language>
+	<Form>CDRom.bfm</Form>
+	<unit>CDRom.unt</unit>
+</Project>

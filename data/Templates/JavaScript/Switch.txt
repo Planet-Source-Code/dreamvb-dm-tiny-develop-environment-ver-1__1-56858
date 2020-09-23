@@ -1,0 +1,16 @@
+var sTextStyle = 'B';
+
+switch (sTextStyle)
+    {
+        case 'B':
+            MessageBox('You selected Bold');
+            break;
+        case 'I':
+            MessageBox('You selected Italic');
+            break;
+        case 'U':
+            MessageBox('You selected Underline');
+            break;
+            default:
+            MessageBox('No Choice Made');
+    }

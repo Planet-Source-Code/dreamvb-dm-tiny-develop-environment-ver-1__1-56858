@@ -1,0 +1,19 @@
+' ------------------------------------------------------------------
+' PROGRAM {Project}  
+' ------------------------------------------------------------------
+' Date Created : {Date}
+' Time Created : {Time}
+' Language     : {Language}
+' Author       : {Owner}
+' Organization : {Organization}
+
+' Other Comments:
+
+Sub Main()
+    'Add your main code here
+End Sub
+
+Call Main()
+
+   'Add your other controls code here
+

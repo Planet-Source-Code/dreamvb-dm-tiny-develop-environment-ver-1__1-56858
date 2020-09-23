@@ -1,0 +1,2 @@
+Calendar = new ActiveXObject("MSCAL.Calendar");
+MessageBox(Calendar.value);

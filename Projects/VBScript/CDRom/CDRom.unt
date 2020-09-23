@@ -1,0 +1,38 @@
+' ------------------------------------------------------------------
+' PROGRAM CDRom  
+' ------------------------------------------------------------------
+' Date Created : 10/18/2001
+' Time Created : 10:31:56 AM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    'Add your main code here
+    Dialog.Caption = "CD-ROM Example"
+    lbla(1).caption = ""
+    CmdBut(1).Caption = "&Open"
+    CmdBut(2).Caption = "&Close"
+    CmdBut(3).Caption = "E&xit"
+    CenterDialog()
+End Sub
+
+Call Main()
+
+   'Add your other controls code here
+
+Sub Cmdbut1_Click()
+    mciSendStringA "Set CDAudio Door Open Wait", "", 0, 0
+    lbla(1).Caption = "CD Door is Open"
+End Sub
+
+Sub Cmdbut2_Click()
+    mciSendStringA "Set CDAudio Door Closed Wait","",0,0
+    lbla(1).Caption = "CD Door is now Closed"
+End Sub
+
+Sub Cmdbut3_Click()
+    UnloadDialog()
+End Sub

@@ -1,0 +1,7 @@
+var n = 5;
+    if(n<=5){
+        MessageBox('Value is equal to 5');
+    }
+    else{
+        MessageBox('Value is not equal to 5');
+    }

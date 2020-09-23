@@ -1,0 +1,5 @@
+function Add(a,b){
+    return (a+b);
+}
+
+MessageBox(Add(5,5));

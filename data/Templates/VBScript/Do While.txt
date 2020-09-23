@@ -1,0 +1,5 @@
+Dim n
+Do While n < 5
+    n = n + 1
+    MsgBox n
+Loop

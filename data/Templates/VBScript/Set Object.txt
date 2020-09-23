@@ -1,0 +1,5 @@
+Dim Calendar
+    Set Calendar = CreateObject("MSCAL.Calendar")
+    ' create the calender object
+    MsgBox "Date today is :" & Calendar.Value
+    Set Calendar = Nothing ' destroy the object

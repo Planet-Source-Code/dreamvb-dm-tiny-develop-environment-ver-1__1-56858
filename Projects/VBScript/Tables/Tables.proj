@@ -1,0 +1,6 @@
+<Project>
+	<Title>Tables</Title>
+	<Language>VBScript</Language>
+	<Form>Tables.bfm</Form>
+	<unit>Tables.unt</unit>
+</Project>

@@ -1,0 +1,60 @@
+' ------------------------------------------------------------------
+' PROGRAM Text Encoder  
+' ------------------------------------------------------------------
+' Date Created : 10/19/2001
+' Time Created : 1:50:52 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    CenterDialog()
+    Dialog.Caption = "Text Encoder"
+    LblA(1).Caption = "Text to Encode"
+    CmdBut(2).Top = CmdBut(1).Top
+    CmdBut(1).Height = 350
+    CmdBut(2).Height = 350
+    CmdBut(1).Caption = "&Encode"
+    CmdBut(2).Caption = "E&xit"
+    TxtA(1).Text = "This is some text to encode"
+End Sub
+
+Call Main()
+
+   'Add your other controls code here
+
+Sub CmdBut1_Click()
+Dim sText
+    sText = TxtA(1).Text
+    TxtA(1).Text = EnCode(TxtA(1).Text)
+    If CmdBut(1).Caption = "&Encode" then
+        CmdBut(1).Caption = "&Decode"
+    Else
+        CmdBut(1).Caption = "&Encode"
+    End if
+End Sub
+
+
+Sub CmdBut2_Click()
+    UnloadDialog()
+End Sub
+
+Function EnCode(mText)
+Dim i
+Dim c
+Dim aChar
+    For I = 1 to len(mText)
+        c = asc(mid(mText,I,1))
+        aChar = aChar & chr(255-c xor 62)
+    Next
+    I=0
+    c=0
+    EnCode = aChar
+    aChar = ""
+End Function
+
+Sub TxtA1_Change(index)
+    
+End Sub

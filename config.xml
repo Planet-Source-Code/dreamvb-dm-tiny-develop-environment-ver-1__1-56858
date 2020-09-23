@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<FormDesigner>
+		<ShowGrid value="True"/>
+		<GridX value="120"/>
+		<GridY value="120"/>
+		<GridColor value="-2147483636"/>
+		<MovableAtRunTime value="False"/>
+		<ShowControlHints value="True"/>
+	</FormDesigner>
+	<Editor>
+		<Font value="Courier New"/>
+		<FontSize value="10"/>
+		<FontColour value="0"/>
+		<EditFontBackColor value="16777215"/>
+		<TabSize value="4"/>
+		<Codeinsight value="True"/>
+		<EditMarginBar value="True"/>
+	</Editor>
+</config>

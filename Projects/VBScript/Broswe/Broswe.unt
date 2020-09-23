@@ -1,0 +1,29 @@
+' ------------------------------------------------------------------
+' PROGRAM Broswe For Folder
+' ------------------------------------------------------------------
+' Date Created : 10/20/2001
+' Time Created : 1:21:33 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    Dialog.Caption = "Broswe For Folder"
+    CmdBut(1).Caption = "..."
+    CmdBut(2).Caption = "E&xit"
+End Sub
+
+Call Main()
+
+   'Add your other controls code here
+
+Sub CmdBut1_Click()
+    FolName = BrowseForFolder(Hwnd,"Pick a folder:")
+    txtA(1).Text = FolName
+End Sub
+
+Sub CmdBut2_Click()
+    UnloadDialog()
+End Sub

@@ -1,0 +1,58 @@
+' ------------------------------------------------------------------
+' PROGRAM ImageView
+' ------------------------------------------------------------------
+' Date Created : 10/18/2001
+' Time Created : 11:01:59 AM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Set LstFiles = LstA(1)
+Set PicViewer = PicImg(1)
+
+Sub Main()
+    'Add your main code here
+    Dialog.Caption = "DM Image Viewer"
+    LblA(1).Caption = "Path:"
+    TxtA(1).Text = "C:\Windows\"
+    CmdBut(1).Caption = "Load"
+    CmdBut(2).Caption = "E&xit"
+    PicViewer.AutoSize = True
+    CenterDialog()
+End Sub
+
+Call Main
+
+   'Add your other controls code here
+
+Sub CmdBut1_Click()
+Dim x, FileExt
+    LstFiles.Clear
+    x = vbdir(TxtA(1).Text)
+    Do While x <> ""
+        FileExt = GetFileNameExt(CStr(x))
+        If (FileExt = "bmp") Or (FileExt = "jpg") _
+        Or (FileExt = "gif") Or (FileExt = "ico") Then
+            LstFiles.AddItem x
+        End If
+        
+        vbDoEvents()
+        x = vbdir()
+    Loop
+End Sub
+
+Sub LstA1_Click()
+Dim PicFile
+    PicFile = TxtA(1).Text & LstFiles.Text
+    PicViewer.Picture = LoadPicture(PicFile)
+End Sub
+
+Sub CmdBut2_Click()
+    UnloadDialog()
+End Sub
+
+Sub TxtA1_Change(index)
+
+End Sub

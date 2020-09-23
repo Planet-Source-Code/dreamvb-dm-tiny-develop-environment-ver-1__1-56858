@@ -1,0 +1,7 @@
+var n = 0;
+do{
+    n++;
+    MessageBox(n);
+  }
+while(n<5);
+}

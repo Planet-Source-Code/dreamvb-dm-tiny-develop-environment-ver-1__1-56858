@@ -1,0 +1,6 @@
+<Project>
+	<Title>Broswe</Title>
+	<Language>VBScript</Language>
+	<Form>Broswe.bfm</Form>
+	<unit>Broswe.unt</unit>
+</Project>

@@ -1,0 +1,9 @@
+Dim names(2), Item
+
+    names(0) = "Ben"
+    names(1) = "Jack"
+    names(2) = "Tom"
+    
+    For Each Item In names
+        MsgBox Item
+    Next

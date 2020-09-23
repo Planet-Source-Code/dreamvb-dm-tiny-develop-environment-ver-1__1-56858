@@ -1,0 +1,10 @@
+Dim age
+    age = 26
+    
+    If (age < 20) Then
+        MsgBox "your young"
+    ElseIf (age > 20 And age < 50) Then
+        MsgBox "Your getting older"
+    Else
+        MsgBox "Your old now"
+    End If

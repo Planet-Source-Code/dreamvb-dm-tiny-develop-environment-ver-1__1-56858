@@ -1,0 +1,37 @@
+' -------------------------------------------------------------------
+' PROGRAM Network Information Demo  
+' ------------------------------------------------------------------
+' Date Created : 10/15/2001
+' Time Created : 8:08:20 AM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    Dialog.Caption = "Network Information"
+    CmdBut(1).Caption = "&Show Info"
+    CmdBut(2).Caption = "E&xit"
+    LblA(1).Caption = ""
+    CenterDialog()
+End Sub
+
+Call Main()
+
+Sub CmdBut1_Click()
+Dim Text 
+    Text = "Network Information" & VbCrlf & VbCrlf
+    Set WshNetwork = CreateObject("WScript.Network")
+
+    Text = Text & "Computer Name :" & WshNetwork.ComputerName & VbCrlf
+    Text = Text & "Domain :" & WshNetwork.UserDomain & VbCrlf
+    Text = Text & "User Name :" & WshNetwork.UserName & VbCrlf
+    lbla(1).caption = text
+End Sub
+
+Sub CmdBut2_Click()
+    UnloadDialog
+End Sub
+
+

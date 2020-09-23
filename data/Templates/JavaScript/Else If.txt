@@ -1,0 +1,12 @@
+var age = 41;
+
+    if(age<50){
+        MessageBox('You are pretty Young');
+    }
+    else if(age==50){
+        MessageBox('Your getting older now');
+    }
+    else
+    {
+       MessageBox('Your Old Now');
+    }

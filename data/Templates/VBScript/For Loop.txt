@@ -1,0 +1,4 @@
+Dim n
+    For n = 0 To 5
+        MsgBox n
+    Next
