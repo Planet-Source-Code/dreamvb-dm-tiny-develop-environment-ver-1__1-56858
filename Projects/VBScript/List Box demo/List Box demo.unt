@@ -1,0 +1,50 @@
+' ------------------------------------------------------------------
+' PROGRAM List Box demo  
+' ------------------------------------------------------------------
+' Date Created : 10/19/2001
+' Time Created : 4:00:02 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+Dim LstIndex
+
+Sub Main()
+    'Add your main code here
+    Dialog.Caption = "List Box Demo"
+    CenterDialog()
+    LblA(1).Caption = "Enter an Item to add:"
+    CmdBut(1).Caption = "&Add"
+    CmdBut(2).Caption = "Exit"
+    CmdBut(3).caption = "Remove"
+    CmdBut(3).Enabled = False
+End Sub
+
+Call Main()
+
+   'Add your other controls code here
+
+Sub CmdBut1_Click()
+    if len(trim(txta(1).text)) <=0 then
+        msgbox "Enter some text to add to the listbox"
+    else
+        LstA(1).AddItem txta(1).text
+    End If
+    TxtA(1).Text = ""
+End Sub
+
+Sub lstA1_Click()
+    LstIndex = LstA(1).ListIndex
+    Cmdbut(3).Enabled = True
+End Sub
+
+Sub CmdBut2_Click()
+   UnloadDialog()
+End Sub
+
+Sub CmdBut3_Click()
+    if lstA(1).ListCount = 0 then exit sub
+    LstA(1).RemoveItem(LstIndex)
+End Sub
+

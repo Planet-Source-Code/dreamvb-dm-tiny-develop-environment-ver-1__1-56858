@@ -1,0 +1,181 @@
+' ------------------------------------------------------------------
+' PROGRAM qDraw
+' ------------------------------------------------------------------
+' Date Created : 10/19/2001
+' Time Created : 4:30:59 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+Dim Oldx, Oldy, xStart, yStart
+Dim CanDraw, DrawOption
+
+Sub Main()
+Dim n
+    'Add your main code here
+    Dialog.Caption = "DM QPaint"
+    lbla(1).Caption = "Line..."
+    lbla(2).Caption = "Pencil..."
+    lbla(3).Caption = "Spray Can..."
+    lbla(4).Caption = "Pen Sizes:"
+    lbla(5).Caption = "Brush Styles:"
+    Picimg(1).AutoRedraw = True
+    Picimg(2).Width = 2970
+    Picimg(2).Height = 225
+    Picimg(2).BorderStyle = 0
+    Picimg(2).Picture = LoadPicture(AppPath & "pallet.jpg")
+    Picimg(3).Top = Picimg(2).Top
+    Picimg(3).Height = Picimg(2).Height
+    Picimg(3).BorderStyle = 0
+    Picimg(3).BackColor = vbBlack
+    DrawOption = "M_LINE"
+    
+    For n = 1 To 10
+       LstA(1).AddItem n
+    Next
+    
+    LstA(2).AddItem "Solid"
+    LstA(2).AddItem "Dash"
+    LstA(2).AddItem "Dot"
+    LstA(2).AddItem "Dash-Dot"
+    LstA(2).AddItem "Dast-Dot-Dot"
+    LstA(2).AddItem "Transparent"
+    LstA(2).AddItem "Inside Solid"
+
+    CmdBut(1).Caption = "&Clear"
+    CmdBut(2).Caption = "&Save"
+    CmdBut(3).Caption = "&Load"
+    CmdBut(4).Caption = "Exit"
+End Sub
+
+Call Main
+
+   'Add your other controls code here
+
+Sub lblA1_MouseMove(Index, button, shift, x, y)
+    DoHyperLink lbla(1), True
+End Sub
+
+Sub lblA2_MouseMove(Index, button, shift, x, y)
+    DoHyperLink lbla(2), True
+End Sub
+
+Sub lblA3_MouseMove(Index, button, shift, x, y)
+    DoHyperLink lbla(3), True
+End Sub
+
+Sub DoHyperLink(theObject, nShow)
+Dim i
+    For i = 1 To lbla.Count - 1
+        lbla(i).ForeColor = vbBlack
+        lbla(i).FontUnderline = flase
+        lbla(i).Font.Bold = flase
+    Next
+    If Not nShow Then Exit Sub
+    theObject.Font.Bold = True
+    theObject.ForeColor = vbRed
+    theObject.Font.Underline = True
+End Sub
+
+Sub Dialog_MouseMove(button, shift, x, y)
+    DoHyperLink lbla, False
+End Sub
+
+Sub PicImg1_MouseMove(Index, button, shift, x, y)
+    If DrawOption = "M_LINE" Then
+        If button = 1 Then
+            DrawLine Picimg(1), xStart, yStart, Oldx, Oldy, vbRed
+            DrawLine Picimg(1), xStart, yStart, x, y, vbRed
+            Oldx = x
+            Oldy = y
+        End If
+    ElseIf DrawOption = "M_PEN" Then
+        If button = 1 Then
+            DrawLine Picimg(1), Oldx, Oldy, x, y, Picimg(3).BackColor
+            Oldx = x
+            Oldy = y
+        End If
+    Else
+        If button = 1 Then
+            For i = 0 To 120
+                Randomize
+                a = Int(Rnd * i) - 10
+                b = Int(Rnd * i) - 10
+                Plot Picimg(1), x + a, y + b, Picimg(3).BackColor
+            Next
+        End If
+    End If
+End Sub
+
+Sub PicImg1_MouseDown(Index, button, shift, x, y)
+    If button = 1 Then
+        xStart = x
+        yStart = y
+        Oldx = xStart
+        Oldy = yStart
+        If DrawOption = "M_LINE" Then
+            Picimg(1).DrawMode = 7
+        Else
+            Picimg(1).DrawMode = 13
+        End If
+    End If
+End Sub
+
+Sub PicImg1_MouseUp(Index, button, shift, x, y)
+    If DrawOption = "M_LINE" Then
+    If button = 1 Then
+         Picimg(1).DrawMode = 13
+         DrawLine Picimg(1), xStart, yStart, Oldx, Oldy, Picimg(3).BackColor
+         DrawLine Picimg(1), xStart, yStart, x, y, Picimg(3).BackColor
+      End If
+    End If
+End Sub
+
+Sub PicImg2_MouseMove(Index, button, shift, x, y)
+    If button = 1 Then
+        Picimg(3).BackColor = GetPoint(Picimg(2), x, y)
+    End If
+End Sub
+
+Sub LblA1_Click()
+    DrawOption = "M_LINE"
+End Sub
+
+Sub LblA2_Click()
+    DrawOption = "M_PEN"
+End Sub
+
+Sub LblA3_Click()
+    DrawOption = "M_BRUSH"
+End Sub
+
+Sub LstA1_Click()
+    Picimg(1).DrawWidth = LstA(1).Text
+End Sub
+
+Sub LstA2_Click()
+    Picimg(1).DrawStyle = LstA(2).ListIndex
+End Sub
+
+Sub CmdBut1_Click()
+    Picimg(1).Cls
+End Sub
+
+Sub CmdBut2_Click()
+Dim s
+    s = InputBox("Please enter the path and file to save to:")
+    If Len(Trim(s)) = 0 Then Exit Sub
+    tSavepicture Picimg(1), s
+End Sub
+
+Sub CmdBut3_Click()
+Dim s
+    s = InputBox("Please enter the path and file to load:")
+    If Len(Trim(s)) = 0 Then Exit Sub
+    Picimg(1).Picture = LoadPicture(s)
+End Sub
+
+Sub CmdBut4_Click()
+    UnloadDialog()
+End Sub

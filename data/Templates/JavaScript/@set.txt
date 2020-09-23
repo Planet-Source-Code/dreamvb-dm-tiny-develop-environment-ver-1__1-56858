@@ -1,0 +1,4 @@
+@set @Variable1 = 10;
+@set @Variable2 = (@Variable1 * 2);
+MessageBox(@Variable2);
+

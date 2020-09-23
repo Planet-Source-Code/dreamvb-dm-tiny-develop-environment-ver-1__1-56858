@@ -1,0 +1,4 @@
+MessageBox(@if (@_win32) "OS Type WinNT or Windows 95" @else "Your using Windows 3x" @end)
+
+
+

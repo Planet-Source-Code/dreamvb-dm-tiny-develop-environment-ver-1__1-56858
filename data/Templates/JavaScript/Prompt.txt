@@ -1,0 +1,2 @@
+var result = Prompt('What is your name','Prompt Example');
+MessageBox('Pleased to meet you: ' + result);

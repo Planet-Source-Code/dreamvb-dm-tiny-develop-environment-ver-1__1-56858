@@ -1,0 +1,17 @@
+Dim names(1 To 3), item
+    names(1) = "Ben"
+    names(2) = "Jack"
+    names(3) = "Bob"
+    
+    item = 2
+    
+    Select Case item
+        Case 0
+            MsgBox "Hello " & names(item)
+        Case 1
+            MsgBox "Hello " & names(item)
+        Case 2
+            MsgBox "Hello " & names(item)
+        Case Else
+            MsgBox "Now name for that item"
+    End Select

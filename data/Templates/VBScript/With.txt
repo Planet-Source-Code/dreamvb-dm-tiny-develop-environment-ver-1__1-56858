@@ -1,0 +1,7 @@
+With Dialog
+    .Caption = "Dialogs Caption Goes Here"
+    .Height = 3080
+    .Width = 3080
+    .Top = 300
+    .Left = 300
+End with

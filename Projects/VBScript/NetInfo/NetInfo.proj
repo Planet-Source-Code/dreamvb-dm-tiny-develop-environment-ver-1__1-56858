@@ -1,0 +1,6 @@
+<Project>
+	<Title>NetInfo</Title>
+	<Language>VBScript</Language>
+	<Form>NetInfo.bfm</Form>
+	<unit>NetInfo.unt</unit>
+</Project>

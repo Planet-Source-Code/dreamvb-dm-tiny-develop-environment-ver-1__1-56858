@@ -1,0 +1,52 @@
+' ------------------------------------------------------------------
+' PROGRAM Tables  
+' ------------------------------------------------------------------
+' Date Created : 10/20/2001
+' Time Created : 1:08:31 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    Dialog.Caption = "Times Table Lister"
+    cmdbut(1).Caption = "Fill List"
+    cmdBut(2).Caption = "Save Results"
+    cmdbut(3).Caption = "E&xit"
+    lblA(1).Caption = "Enter the times table you like to list:"
+    lblA(1).AutoSize = True
+    txtA(1).text = "2"
+End Sub
+
+Call Main()
+
+Sub TxtA1_Change(index)
+
+End Sub
+
+Sub CmdBut1_Click()
+    if txtA(1).text = "" then msgbox "You must include a number"
+    StrA = ""
+    StrB = ""
+    LstA(1).Clear
+    For I = 1 to 12
+        A = cInt(txtA(1).text) * i
+        StrA = I & " x " & txtA(1).text & " = " & A
+        StrB = StrB & StrA & vbcrlf
+        lstA(1).AddItem StrA
+    Next
+End Sub
+
+Sub CmdBut2_Click()
+       WriteFile "C:\tables.txt",cstr(strb)
+       msgbox "Your results have now been saved to c:\tables.txt",vbInformation,"Results Saved"
+       StrA  = ""
+       StrB = ""
+End Sub
+
+Sub CmdBut3_Click()
+    UnloadDialog()
+End Sub
+
+

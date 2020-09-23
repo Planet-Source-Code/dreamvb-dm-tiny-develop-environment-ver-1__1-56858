@@ -1,0 +1,6 @@
+<Project>
+	<Title>qDraw</Title>
+	<Language>VBScript</Language>
+	<Form>qDraw.bfm</Form>
+	<unit>qDraw.unt</unit>
+</Project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeHelpers>
+	<FilePath>
+		<Path Value="{AppDataPath}Templates\"/>
+	</FilePath>
+	
+	<ListCount>
+		<Count value="16"/>
+	</ListCount>
+	<VBScript>
+		<HelperName1 Value="Call::Call.txt"/>
+		<HelperName2 Value="Do Until::Do Until.txt"/>
+		<HelperName3 Value="Do While::Do While.txt"/>
+		<HelperName4 Value="For Each::For Each.txt"/>
+		<HelperName5 Value="For Loop::For Loop.txt"/>
+		<HelperName6 Value="Function::Function.txt"/>
+		<HelperName7 Value="GoSub::GoSub.txt"/>
+		<HelperName8 Value="Goto::Goto.txt"/>
+		<HelperName9 Value="IF::IF.txt"/>
+		<HelperName10 Value="IF Then Else::IF Then Else.txt"/>
+		<HelperName11 Value="On Error Resume Next::On Error Resume Next.txt"/>
+		<HelperName12 Value="Select Case::Select Case.txt"/>
+		<HelperName13 Value="Set Object::Set Object.txt"/>
+		<HelperName14 Value="Sub::Sub.txt"/>
+		<HelperName15 Value="While Wend::While Wend.txt"/>
+		<HelperName16 Value="With::With.txt"/>
+	</VBScript>
+	<JavaScript>
+		<HelperName1 Value="@IF::@IF.txt"/>
+		<HelperName2 Value="@set::@set.txt"/>
+		<HelperName3 Value="ActiveXObject::ActiveXObject.txt"/>
+		<HelperName4 Value="Array::Array.txt"/>
+		<HelperName5 Value="Comment::Comment.txt"/>
+		<HelperName6 Value="Do While::Do While.txt"/>
+		<HelperName7 Value="Else If::Else If.txt"/>
+		<HelperName8 Value="For Loop::For Loop.txt"/>
+		<HelperName9 Value="Function::Function.txt"/>
+		<HelperName10 Value="IF::IF.txt"/>
+		<HelperName11 Value="MessageBox::MessageBox"/>
+		<HelperName12 Value="Prompt::Prompt.txt"/>
+		<HelperName13 Value="Return::Return.txt"/>
+		<HelperName14 Value="Switch::Switch.txt"/>
+		<HelperName15 Value="Variable::Variable.txt"/>
+		<HelperName16 Value="With::With.txt"/>
+	</JavaScript>
+</CodeHelpers>

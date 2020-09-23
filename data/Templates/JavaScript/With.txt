@@ -1,0 +1,7 @@
+with (Dialog){
+    Caption = 'Dialog Caption Goes Here';
+    Top = 300;
+    Left = 300;
+    Height = 3500;
+    Width = 3500;
+}

@@ -1,0 +1,2 @@
+var Variable1 = 'String Variable'
+var Variable2 = 10; // Number Variable

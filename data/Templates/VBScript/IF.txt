@@ -1,0 +1,7 @@
+Dim n
+    n = 6
+    If (n > 5) Then
+        MsgBox "n is more than 5"
+    Else
+        MsgBox "m is less than 5"
+    End If

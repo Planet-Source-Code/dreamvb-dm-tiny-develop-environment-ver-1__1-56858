@@ -1,0 +1,6 @@
+<Project>
+	<Title>List Box demo</Title>
+	<Language>VBScript</Language>
+	<Form>List Box demo.bfm</Form>
+	<unit>List Box demo.unt</unit>
+</Project>

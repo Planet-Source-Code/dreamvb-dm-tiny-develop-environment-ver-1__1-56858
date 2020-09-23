@@ -1,0 +1,4 @@
+Sub SubTest()
+    MsgBox "This is a sub"
+    ' To call the sub use Call SubTest
+End Sub

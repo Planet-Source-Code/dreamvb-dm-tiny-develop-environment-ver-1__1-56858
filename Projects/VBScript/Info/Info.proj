@@ -1,0 +1,6 @@
+<Project>
+	<Title>Info</Title>
+	<Language>VBScript</Language>
+	<Form>Info.bfm</Form>
+	<unit>Info.unt</unit>
+</Project>

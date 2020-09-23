@@ -1,0 +1,6 @@
+<Project>
+	<Title>Text Encoder</Title>
+	<Language>VBScript</Language>
+	<Form>Text Encoder.bfm</Form>
+	<unit>Text Encoder.unt</unit>
+</Project>

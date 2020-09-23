@@ -1,0 +1,43 @@
+' ------------------------------------------------------------------
+' PROGRAM Info  
+' ------------------------------------------------------------------
+' Date Created : 10/20/2001
+' Time Created : 1:17:50 PM
+' Language     : VBScript
+' Author       : Ben Jones
+' Organization : Home
+
+' Other Comments:
+
+Sub Main()
+    CmdBut(1).Caption = "Click Me"
+    CmdBut(2).Caption = "E&xit"
+    lblA(1).Caption = ""
+    Dialog.Caption = "Information Demo"
+    Dialog.FontSize = 24
+    Dialog.Font = "Arial"
+    Dialog.Autoredraw = True
+    
+    For I = 1 to 255
+        Dialog.CurrentX = 5+i
+        Dialog.CurrentY = 5+i
+        Printf "Information Demo"
+        ForeColorf = rgb(i,0,255)
+    Next
+    
+    Dialog.CenterDialog
+End Sub
+
+Call Main()
+
+Sub CmdBut1_Click()
+    lblA(1).Caption = "Computer Name: " & GetComputerNameA _
+    & vbCrlf & "User Name: " & GetUserNameA _
+    & vbCrlf & "WinDir: " & GetEnvVar("windir") _
+    & vbCrlf & "User Pro File: " & GetEnvVar("USERPROFILE")  
+End Sub
+
+Sub CmdBut2_Click()
+    UnloadDialog 
+End Sub
+
